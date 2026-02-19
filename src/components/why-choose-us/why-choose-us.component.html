@@ -1,0 +1,32 @@
+
+<section class="py-20 sm:py-32 bg-[#101024]">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16" appAnimateOnScroll>
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 text-glow-accent">Why ChuriTech Shines Brighter</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+      @for(feature of features(); track feature.title; let i = $index) {
+        <div class="flex flex-col items-center" [style.--animation-delay]="i * 150 + 'ms'" appAnimateOnScroll>
+          <div class="w-16 h-16 rounded-full bg-[var(--color-accent-bg-faded)] flex items-center justify-center text-[var(--color-accent-400)] mb-5 glow-primary scroll-animate" appAnimateOnScroll="scale-in" [style.--animation-delay]="(i * 150) + 100 + 'ms'">
+            @switch (feature.icon) {
+              @case ('rocket') {
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              }
+              @case ('zap') {
+                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 16v-2m8-8h2M2 12H4m14.364-5.636l1.414-1.414M5.636 18.364l-1.414 1.414M18.364 18.364l1.414 1.414M5.636 5.636l-1.414-1.414M12 16a4 4 0 110-8 4 4 0 010 8z" /></svg>
+              }
+              @case ('search') {
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              }
+              @case ('users') {
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              }
+            }
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">{{ feature.title }}</h3>
+          <p class="text-gray-400">{{ feature.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+
+<header 
+  [class.bg-[#0A0A1A]/80]="isScrolled()"
+  [class.backdrop-blur-lg]="isScrolled()"
+  [class.shadow-lg]="isScrolled()"
+  [class.shadow-[var(--color-primary-500)]/10]="isScrolled()"
+  class="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a routerLink="/">
+      <app-logo></app-logo>
+    </a>
+    <div class="hidden md:flex items-center space-x-8">
+      <a routerLink="/services" routerLinkActive="active-link" class="text-gray-300 hover:text-[var(--color-accent-400)] transition-colors duration-200">Services</a>
+      <a routerLink="/about" routerLinkActive="active-link" class="text-gray-300 hover:text-[var(--color-accent-400)] transition-colors duration-200">About</a>
+      <a routerLink="/portfolio" routerLinkActive="active-link" class="text-gray-300 hover:text-[var(--color-accent-400)] transition-colors duration-200">Portfolio</a>
+      <a routerLink="/contact" routerLinkActive="active-link" class="text-gray-300 hover:text-[var(--color-accent-400)] transition-colors duration-200">Contact</a>
+    </div>
+    <button class="md:hidden text-white">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+    </button>
+  </nav>
+</header>

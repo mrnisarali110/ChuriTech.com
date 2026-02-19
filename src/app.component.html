@@ -1,0 +1,27 @@
+
+@if (isLoading()) {
+  <div 
+    [class.fade-out]="isLoaderFadingOut()"
+    class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#0A0A1A] transition-opacity duration-500">
+    <div class="relative flex flex-col items-center">
+      <!-- Hanging wire -->
+      <div class="h-24 w-0.5 bg-gray-600"></div>
+      <!-- Bulb socket -->
+      <div class="w-12 h-8 bg-gray-700 rounded-t-md border-b-2 border-gray-800"></div>
+      <!-- Bulb glass -->
+      <div class="bulb w-24 h-32 bg-gray-800/20 rounded-b-full border border-gray-600/50 relative flex justify-center items-start pt-4">
+        <div class="filament w-4 h-2 rounded-full opacity-0"></div>
+      </div>
+    </div>
+  </div>
+}
+
+@if (contentVisible()) {
+  <div class="fade-in-content bg-[#0A0A1A] flex flex-col min-h-screen">
+    <app-header></app-header>
+    <main class="flex-grow">
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer></app-footer>
+  </div>
+}
