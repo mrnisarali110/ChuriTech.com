@@ -1,20 +1,19 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Deployment Instructions for Vercel
 
-# Run and deploy your AI Studio app
+To deploy this Angular application to Vercel, follow these steps:
 
-This contains everything you need to run your app locally.
+1.  **Push to GitHub**: Push your code to a GitHub repository.
+2.  **Import to Vercel**:
+    -   Go to [Vercel](https://vercel.com) and click **"Add New"** > **"Project"**.
+    -   Import your GitHub repository.
+3.  **Configure Project Settings**:
+    -   **Framework Preset**: Select **"Angular"** (Vercel should detect this automatically).
+    -   **Build Command**: `npm run build` (Default).
+    -   **Output Directory**: `dist` (This matches the configuration in `angular.json`).
+    -   **Install Command**: `npm install` (Default).
+4.  **Deploy**: Click **"Deploy"**.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1MxD983xBT2n7hLj6WbrouT4EeqYIqlSk
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Notes:
+-   The project uses a custom entry point (`index.tsx`), but the Angular build system is configured to handle it.
+-   A `vercel.json` file has been included to handle Single Page Application (SPA) routing, ensuring that deep links work correctly.
+-   Unnecessary files like `.angular` and `node_modules` are excluded via `.vercelignore`.
