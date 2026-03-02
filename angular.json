@@ -12,16 +12,16 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": {
-              "base": "./dist",
-              "browser": "."
-            },
-            "browser": "index.tsx",
+            "outputPath": "dist",
+            "index": "index.html",
+            "main": "index.tsx",
             "tsConfig": "tsconfig.json"
           },
           "configurations": {
             "production": {
-              "outputHashing": "all"
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false
             },
             "development": {
               "optimization": false,
