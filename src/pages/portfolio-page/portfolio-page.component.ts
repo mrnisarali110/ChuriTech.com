@@ -9,10 +9,10 @@ interface Project {
 }
 
 @Component({
-  selector: 'app-services-page',
-  standalone: true,        // <-- add this
+  selector: 'app-portfolio-page',
+  standalone: true,
   imports: [AnimateOnScrollDirective],
-  templateUrl: './services-page.component.html',
+  templateUrl: './portfolio-page.component.html',
 })
 export class PortfolioPageComponent {
   projects = signal<Project[]>([
